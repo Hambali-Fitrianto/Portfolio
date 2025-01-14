@@ -6,7 +6,6 @@
     <title>Hambali Fitrianto - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Link to external CSS file -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -19,15 +18,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -40,7 +34,7 @@
             <p class="lead mb-4">Web Programmer</p>
         </div>
     </section>
-    
+
     <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container">
@@ -48,13 +42,71 @@
                 <div class="card-body text-center p-5">
                     <img src="assets/images/profile.jpg" alt="Hambali Fitrianto" class="rounded-circle profile-img border border-primary border-3 mb-4">
                     <h2 class="card-title mb-4">About Me</h2>
-                    <p class="card-text">Saya seorang Web Programmer dengan pengalaman dalam membangun aplikasi web responsif dan dinamis. 
-                    Saya memiliki keahlian dalam berbagai teknologi web modern dan selalu berfokus pada pengembangan aplikasi yang efektif dan mudah diakses. 
-                    Berkomitmen untuk terus belajar dan mengembangkan keterampilan saya, saya siap untuk menghadapi tantangan baru dalam dunia pengembangan perangkat lunak.</p>
+                    <p class="card-text">Saya seorang Web Programmer dengan pengalaman dalam membangun aplikasi web responsif dan dinamis. Saya memiliki keahlian dalam berbagai teknologi web modern...</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">My Skills</h2>
+            <div class="row g-4">
+                <!-- Skill Icons -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow text-center">
+                        <img src="assets/images/icon-skills/php.png" class="card-img-top mb-3" alt="PHP" style="max-width: 80px; margin: 0 auto;">
+                        <h5 class="card-title">PHP</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow text-center">
+                        <img src="assets/images/icon-skills/laravel.png" class="card-img-top mb-3" alt="Laravel" style="max-width: 80px; margin: 0 auto;">
+                        <h5 class="card-title">Laravel</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow text-center">
+                        <img src="assets/images/icon-skills/html.png" class="card-img-top mb-3" alt="HTML" style="max-width: 80px; margin: 0 auto;">
+                        <h5 class="card-title">HTML</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow text-center">
+                        <img src="assets/images/icon-skills/css.png" class="card-img-top mb-3" alt="CSS" style="max-width: 80px; margin: 0 auto;">
+                        <h5 class="card-title">CSS</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow text-center">
+                        <img src="assets/images/icon-skills/javascript.png" class="card-img-top mb-3" alt="JavaScript" style="max-width: 80px; margin: 0 auto;">
+                        <h5 class="card-title">JavaScript</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow text-center">
+                        <img src="assets/images/icon-skills/git.png" class="card-img-top mb-3" alt="Git" style="max-width: 80px; margin: 0 auto;">
+                        <h5 class="card-title">Git</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow text-center">
+                        <img src="assets/images/icon-skills/mysql.png" class="card-img-top mb-3" alt="MySQL" style="max-width: 80px; margin: 0 auto;">
+                        <h5 class="card-title">MySQL</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow text-center">
+                        <img src="assets/images/icon-skills/postgresql.png" class="card-img-top mb-3" alt="PostgreSQL" style="max-width: 80px; margin: 0 auto;">
+                        <h5 class="card-title">PostgreSQL</h5>
+                    </div>
+                </div>
+                <!-- Add more skills as necessary -->
+            </div>
+        </div>
+    </section>
+
 
     <!-- Projects Section -->
     <section id="projects" class="py-5 bg-light">
@@ -210,9 +262,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <!-- Link to external JS file -->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
