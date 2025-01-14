@@ -1,0 +1,65 @@
+/* Style untuk perjalanan */
+#journey {
+    background-color: #f0f8ff;
+    height: 200px;
+}
+
+#house, #campus, #person {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#house {
+    left: 0;
+    top: 43%; /* Adjust this value to move the house higher */
+    width: 150px;
+    height: 150px;
+}
+
+#campus {
+    right: 0;
+    width: 200px;
+    height: 100px;
+    /* No fading animation; campus stays static */
+}
+
+#person {
+    left: 0;
+    top: 20%; /* Adjust this value to move the person higher */
+    opacity: 0; /* Person starts hidden */
+    animation: typingEffect 2s steps(20) 1, walkAnimation 12s linear infinite, fadeInPerson 2s ease-in-out forwards;
+}
+
+
+/* Animasi orang berjalan */
+@keyframes walkAnimation {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 80%; /* Person moves to near campus */
+    }
+}
+
+/* Animasi untuk typing effect */
+@keyframes typingEffect {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* Fade in untuk orang berjalan */
+@keyframes fadeInPerson {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
