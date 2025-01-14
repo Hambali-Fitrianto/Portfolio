@@ -19,13 +19,18 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Tanggal/Waktu di pojok kiri atas -->
+    <p id="tanggalwaktu"></p>
 
     <!-- Hero Section -->
     <section class="hero-section text-white text-center">
@@ -43,6 +48,75 @@
                     <img src="assets/images/profile.jpg" alt="Hambali Fitrianto" class="rounded-circle profile-img border border-primary border-3 mb-4">
                     <h2 class="card-title mb-4">About Me</h2>
                     <p class="card-text">Saya seorang Web Programmer dengan pengalaman dalam membangun aplikasi web responsif dan dinamis. Saya memiliki keahlian dalam berbagai teknologi web modern...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Experience</h2>
+            <div class="row g-4">
+                <!-- Experience 1 -->
+                <div class="col-md-6 col-lg-6">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Programmer - Internship</h5>
+                            <h6 class="text-muted">SD Negeri Lombang Dajah 1 Blega</h6>
+                            <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i>Januari 2022 - Juni 2022</p>
+                            <p class="card-text">
+                                Membuat Website / Sistem Informasi untuk SD Negeri Lombang Dajah 1 Blega menggunakan Framework Laravel. 
+                                Proyek ini mencakup:
+                                <ul>
+                                    <li>Manajemen data siswa dan guru.</li>
+                                    <li>Dashboard untuk administrasi sekolah.</li>
+                                    <li>Sistem pengelolaan nilai dan jadwal pelajaran.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Experience 2 -->
+                <div class="col-md-6 col-lg-6">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Programmer - Contract</h5>
+                            <h6 class="text-muted">CV. NATUSI</h6>
+                            <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i>September 2022 - Desember 2023</p>
+                            <p class="card-text">
+                                Mengembangkan Sistem Informasi Rumah Sakit untuk layanan IGD dan Antrian Online menggunakan Laravel dan Vue.js. 
+                                Proyek ini mencakup fitur-fitur seperti:
+                                <ul>
+                                    <li>Sistem antrian online berbasis APM (Anjungan Pendaftaran Mandiri).</li>
+                                    <li>Pendaftaran pasien secara online dan offline.</li>
+                                    <li>Manajemen data pasien, dokter, dan jadwal pelayanan.</li>
+                                    <li>Pengelolaan laporan IGD untuk keperluan internal rumah sakit.</li>
+                                    <li>Integrasi API untuk notifikasi kepada pasien melalui SMS atau WhatsApp.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Education</h2>
+            <div class="row">
+                <!-- Education 1 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Teknik Informatika</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Universitas Trunojoyo Madura</h6>
+                            <p class="card-text">Menempuh pendidikan di bidang Teknik Informatika dengan fokus pada pengembangan perangkat lunak, sistem informasi, dan teknologi web.</p>
+                            <p class="text-muted">2020 - 2024</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,7 +180,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Projects Section -->
     <section id="projects" class="py-5 bg-light">
@@ -262,6 +335,19 @@
         </div>
     </footer>
 
+    <script>
+        var tw = new Date();
+        if (tw.getTimezoneOffset() == 0) (a = tw.getTime() + (7 * 60 * 60 * 1000));
+        else (a = tw.getTime());
+        tw.setTime(a);
+        var tahun = tw.getFullYear();
+        var hari = tw.getDay();
+        var bulan = tw.getMonth();
+        var tanggal = tw.getDate();
+        var hariarray = new Array("Minggu,", "Senin,", "Selasa,", "Rabu,", "Kamis,", "Jum'at,", "Sabtu,");
+        var bulanarray = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember");
+        document.getElementById("tanggalwaktu").innerHTML = hariarray[hari] + " " + tanggal + " " + bulanarray[bulan] + " " + tahun;
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

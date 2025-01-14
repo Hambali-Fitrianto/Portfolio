@@ -35,3 +35,15 @@
 .social-icon:hover {
     color: #0a58ca;
 }
+
+/* CSS untuk menempatkan tanggal/waktu di pojok kiri atas */
+#tanggalwaktu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
