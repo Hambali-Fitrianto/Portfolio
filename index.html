@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hambali Fitrianto - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd, #0a58ca);
+            padding: 6rem 0;
+            margin-bottom: -4rem;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .tech-badge {
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            color: #0d6efd;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #0a58ca;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hambali Fitrianto</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Hambali Fitrianto</h1>
+            <p class="lead mb-4">Web Developer & Software Engineer</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="card shadow">
+                <div class="card-body text-center p-5">
+                    <img src="/api/placeholder/150/150" alt="Hambali Fitrianto" class="rounded-circle profile-img border border-primary border-3 mb-4">
+                    <h2 class="card-title mb-4">About Me</h2>
+                    <p class="card-text">Saya adalah seorang web developer yang berfokus pada pengembangan aplikasi web modern dan responsif. 
+                    Dengan passion dalam teknologi dan pemrograman, saya selalu berusaha menciptakan solusi yang efektif dan inovatif.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">My Projects</h2>
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow">
+                        <img src="/api/placeholder/300/200" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">E-Commerce Website</h5>
+                            <p class="card-text">Website e-commerce dengan fitur shopping cart, payment gateway, dan admin dashboard.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary tech-badge">React</span>
+                                <span class="badge bg-primary tech-badge">Node.js</span>
+                                <span class="badge bg-primary tech-badge">MongoDB</span>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-globe me-2"></i>Live Demo</a>
+                                <a href="#" class="btn btn-outline-primary"><i class="fab fa-github me-2"></i>Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow">
+                        <img src="/api/placeholder/300/200" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Task Management App</h5>
+                            <p class="card-text">Aplikasi manajemen tugas dengan fitur drag-and-drop, kategori, dan reminder.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary tech-badge">Vue.js</span>
+                                <span class="badge bg-primary tech-badge">Firebase</span>
+                                <span class="badge bg-primary tech-badge">Bootstrap</span>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-globe me-2"></i>Live Demo</a>
+                                <a href="#" class="btn btn-outline-primary"><i class="fab fa-github me-2"></i>Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow">
+                        <img src="/api/placeholder/300/200" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Weather Dashboard</h5>
+                            <p class="card-text">Dashboard cuaca real-time dengan visualisasi data dan perkiraan cuaca 7 hari.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary tech-badge">JavaScript</span>
+                                <span class="badge bg-primary tech-badge">Weather API</span>
+                                <span class="badge bg-primary tech-badge">Chart.js</span>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-globe me-2"></i>Live Demo</a>
+                                <a href="#" class="btn btn-outline-primary"><i class="fab fa-github me-2"></i>Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="card shadow">
+                <div class="card-body text-center p-5">
+                    <h2 class="card-title mb-4">Get In Touch</h2>
+                    <p class="card-text mb-4">Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:your.email@example.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Hambali Fitrianto. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
