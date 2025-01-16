@@ -1,39 +1,24 @@
-// Menambahkan kelas 'active' pada navbar link yang sesuai
 document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const sections = document.querySelectorAll('section');
 
-    function setActiveLink() {
-        let currentSection = "";
+    // Menambahkan event listener untuk setiap link
+    navLinks.forEach((link) => {
+        link.addEventListener('click', function (event) {
+            // Menghentikan default behavior dari link
+            event.preventDefault();
 
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionBottom = sectionTop + section.offsetHeight;
+            // Menggulung ke bagian yang dituju
+            const targetSection = document.querySelector(link.getAttribute('href'));
+            window.scrollTo({
+                top: targetSection.offsetTop - 70, // Mengatur posisi scroll agar lebih pas (mengurangi navbar)
+                behavior: 'smooth'
+            });
 
-            if (window.scrollY >= sectionTop && window.scrollY <= sectionBottom) {
-                currentSection = section.getAttribute('id');
-            }
+            // Menambahkan kelas 'active' pada link yang diklik
+            navLinks.forEach((otherLink) => {
+                otherLink.classList.remove('active');
+            });
+            link.classList.add('active');
         });
-
-        navLinks.forEach((link) => {
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', setActiveLink);
-    setActiveLink(); // Memanggil fungsi untuk menetapkan link aktif saat halaman dimuat
-});
-
-// Menambahkan atau menghapus kelas 'scrolled' pada navbar ketika scroll
-window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+    });
 });
