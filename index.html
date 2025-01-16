@@ -7,11 +7,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/navbar.css" rel="stylesheet">
     <link href="assets/css/journey.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Hambali Fitrianto</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -25,16 +26,102 @@
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <!-- <li class="nav-item">
-                        <a href="https://github.com/Hambali-Fitrianto" class="nav-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li> -->
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <!-- Navbar -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="#">
+                <i class="fas fa-laptop-code me-2"></i>Hambali Fitrianto
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about">
+                            <i class="fas fa-user me-1"></i>Tentang
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">
+                            <i class="fas fa-briefcase me-1"></i>Pengalaman
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">
+                            <i class="fas fa-graduation-cap me-1"></i>Pendidikan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">
+                            <i class="fas fa-tools me-1"></i>Keahlian
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">
+                            <i class="fas fa-project-diagram me-1"></i>Proyek
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <i class="fas fa-envelope me-1"></i>Kontak
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
 
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-uppercase text-light" href="#">
+            <i class="fas fa-code me-2"></i>Hambali Fitrianto
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto text-uppercase">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#about">
+                        <i class="fas fa-user me-1"></i>Tentang
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">
+                        <i class="fas fa-briefcase me-1"></i>Pengalaman
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">
+                        <i class="fas fa-graduation-cap me-1"></i>Pendidikan
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">
+                        <i class="fas fa-tools me-1"></i>Keahlian
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">
+                        <i class="fas fa-project-diagram me-1"></i>Proyek
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        <i class="fas fa-envelope me-1"></i>Kontak
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+\end{code}
     <!-- Tanggal/Waktu di pojok kiri atas -->
     <p id="tanggalwaktu"></p>
 
@@ -403,6 +490,7 @@
         document.getElementById("tanggalwaktu").innerHTML = hariarray[hari] + " " + tanggal + " " + bulanarray[bulan] + " " + tahun;
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/navbar.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

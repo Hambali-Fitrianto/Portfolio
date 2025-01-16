@@ -1,0 +1,58 @@
+/* navbar.css */
+
+/* Navbar Link Style */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8); /* Warna putih semi-transparan */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffc107 !important; /* Warna kuning Bootstrap */
+    transform: scale(1.1); /* Membesarkan sedikit saat hover */
+}
+
+/* Active Link */
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ffc107 !important; /* Warna kuning untuk link yang aktif */
+    font-weight: bold; /* Membuat link aktif lebih menonjol */
+    text-decoration: underline; /* Menambahkan garis bawah untuk link aktif */
+}
+
+/* Navbar Brand Style */
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #ffc107 !important; /* Warna kuning saat hover */
+}
+
+/* Shadow Effect */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+    .navbar-nav .nav-link {
+        font-size: 1.1rem; /* Ukuran font sedikit lebih besar pada layar kecil */
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem; /* Ukuran font logo lebih kecil pada layar kecil */
+    }
+}
+
+/* Navbar Background */
+.navbar {
+    background-color: #343a40 !important; /* Warna latar belakang navbar hitam */
+}
+
+/* Navbar on Scroll Effect */
+.navbar.scrolled {
+    background-color: #212529 !important; /* Ganti warna navbar saat scroll */
+    transition: background-color 0.3s ease-in-out;
+}
