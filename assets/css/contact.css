@@ -3,18 +3,32 @@
     background-color: #f8f9fa; /* Background light */
 }
 
-#contact .card {
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#contact .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Jarak antar ikon */
+    align-items: center;
 }
 
 #contact .social-links a {
-    font-size: 1.8rem;
-    margin: 0.5rem;
+    font-size: 3rem;
     color: #007bff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    position: relative;
+    padding: 15px;
+    border-radius: 50%; /* Membuat ikon berbentuk bulat */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.15); /* Bayangan untuk efek timbul awal */
 }
 
+/* Efek timbul 3D saat hover */
 #contact .social-links a:hover {
     color: #0056b3;
+    transform: translateY(-15px) scale(1.2); /* Efek timbul lebih kuat dengan pergeseran lebih besar dan pembesaran */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 25px 50px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar dan lebih kuat untuk kesan timbul */
+}
+
+/* Efek saat diklik (tertekan) */
+#contact .social-links a:active {
+    transform: translateY(-5px) scale(1.1); /* Sedikit tertekan dengan pergeseran kecil */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.1); /* Bayangan lebih halus saat aktif */
 }
