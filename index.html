@@ -7,9 +7,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="assets/css/hero-section.css" rel="stylesheet">
-    <!-- <link href="assets/css/style.css" rel="stylesheet"> -->
+    <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/navbar.css" rel="stylesheet">
     <link href="assets/css/about.css" rel="stylesheet">
+    <link href="assets/css/education.css" rel="stylesheet">
     <link href="assets/css/journey.css" rel="stylesheet">
     <!-- <link href="assets/css/contact.css" rel="stylesheet"> -->
 </head>
@@ -86,12 +87,19 @@
     <section id="about" class="py-5 bg-light">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Gambar Profil -->
+                <!-- Gambar Profil dengan Efek Hover untuk Menampilkan Keterangan -->
                 <div class="col-lg-4 text-center mb-4 mb-lg-0">
-                    <img src="assets/images/profile.jpg" 
-                        alt="Hambali Fitrianto" 
-                        class="rounded-circle border border-primary border-3 shadow profile-img" 
-                        style="width: 200px; height: 200px; object-fit: cover;">
+                    <div class="profile-container position-relative">
+                        <img src="assets/images/profile.jpg" 
+                            alt="Hambali Fitrianto" 
+                            class="rounded-circle border border-primary border-3 shadow profile-img" 
+                            style="width: 200px; height: 200px; object-fit: cover;">
+                        <!-- Keterangan Tentang Saya yang Muncul Saat Hover -->
+                        <div class="profile-info">
+                            <h4>Hambali Fitrianto</h4>
+                            <p>Web Programmer & Developer</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- Konten Tentang -->
                 <div class="col-lg-8">
@@ -118,7 +126,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>    
 
     <!-- Experience Section -->
     <section id="experience" class="py-5 bg-light">

@@ -1,36 +1,74 @@
-/* File: about.css */
-
-/* Mengatur gambar profil agar terlihat mengambang */
-.profile-img {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Shadow lembut lebih kuat */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+/* Profil container dan gambar profil */
+.profile-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
 }
 
-/* Efek hover mengambang */
+/* Gambar profil dengan animasi */
+.profile-img {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Shadow lembut */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek hover */
+    border-radius: 10px;
+}
+
+/* Efek hover pada gambar profil */
 .profile-img:hover {
     transform: translateY(-10px); /* Menaikkan gambar saat hover */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
 }
 
-/* Menambahkan padding pada konten tentang */
+/* Keterangan tentang saya yang muncul di bawah gambar */
+.profile-info {
+    position: absolute;
+    top: 100%; /* Menempatkan keterangan di bawah gambar */
+    left: 50%;
+    transform: translateX(-50%); /* Memastikan keterangan di tengah secara horizontal */
+    background: rgba(0, 0, 0, 0.7); /* Latar belakang transparan gelap */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: none; /* Menyembunyikan keterangan */
+    opacity: 0;
+    transition: all 0.3s ease;
+    width: 100%; /* Membuat keterangan memenuhi lebar gambar */
+}
+
+/* Menampilkan keterangan saat hover pada gambar profil */
+.profile-container:hover .profile-info {
+    display: block;
+    opacity: 1;
+    top: 100%; /* Keterangan muncul di bawah gambar */
+}
+
+/* Styling keterangan */
+.profile-info h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.profile-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+/* Styling untuk konten tentang */
 .card-body {
     padding: 30px;
 }
 
-/* Styling judul card tentang saya */
 .card-title {
     font-size: 2rem;
     color: #343a40;
 }
 
-/* Mengatur teks pada bagian konten tentang */
 .card-text {
     font-size: 1.1rem;
     line-height: 1.7;
     color: #555;
 }
 
-/* Button styling untuk link unduh resume dan lihat proyek */
 .btn-primary {
     background-color: #007bff;
     border-color: #007bff;

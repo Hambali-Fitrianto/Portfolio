@@ -6,9 +6,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80vh; /* Tinggi tidak terlalu besar */
+    height: 75vh; /* Tinggi tidak terlalu besar */
     background-color: #0d6efd; /* Warna biru primary */
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow di bagian bawah */
 }
 
