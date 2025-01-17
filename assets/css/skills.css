@@ -1,0 +1,28 @@
+
+/* Mengatur info skill, dan sembunyikan default */
+.skill-info {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: none; /* Menyembunyikan keterangan awalnya */
+}
+
+/* Menampilkan keterangan saat mouse hover di atas gambar */
+.skill-icon:hover .skill-info {
+    display: block;
+}
+
+/* Efek shadow pada card */
+.skill-card img {
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover img {
+    transform: translateY(-10px); /* Efek terangkat saat hover */
+}
