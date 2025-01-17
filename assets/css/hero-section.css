@@ -1,0 +1,109 @@
+/* Hero Section */
+.hero-section {
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Tinggi tidak terlalu besar */
+    background-color: #0d6efd; /* Warna biru primary */
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow di bagian bawah */
+}
+
+/* Overlay for dark effect */
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Lapisan gelap untuk kontras */
+    z-index: 1;
+}
+
+/* Content inside Hero Section */
+.hero-section .container {
+    position: relative;
+    z-index: 2; /* Konten di atas overlay */
+}
+
+/* Heading */
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Shadow pada teks */
+    margin-bottom: 1.5rem;
+}
+
+/* Subheading */
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Shadow pada teks */
+}
+
+/* Buttons */
+.hero-section .btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.25rem;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow pada tombol */
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #0a58ca;
+    border-color: #0a58ca;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Shadow lebih tegas saat hover */
+}
+
+.hero-section .btn-outline-light {
+    border: 2px solid white;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.25rem;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); /* Shadow pada tombol outline */
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn-outline-light:hover {
+    background-color: white;
+    color: #0d6efd;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3); /* Shadow lebih tegas saat hover */
+}
+
+/* Animations */
+.animate__fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    .hero-section .btn-primary,
+    .hero-section .btn-outline-light {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}

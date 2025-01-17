@@ -1,0 +1,52 @@
+/* File: about.css */
+
+/* Mengatur gambar profil agar terlihat mengambang */
+.profile-img {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Shadow lembut lebih kuat */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+}
+
+/* Efek hover mengambang */
+.profile-img:hover {
+    transform: translateY(-10px); /* Menaikkan gambar saat hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
+}
+
+/* Menambahkan padding pada konten tentang */
+.card-body {
+    padding: 30px;
+}
+
+/* Styling judul card tentang saya */
+.card-title {
+    font-size: 2rem;
+    color: #343a40;
+}
+
+/* Mengatur teks pada bagian konten tentang */
+.card-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Button styling untuk link unduh resume dan lihat proyek */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}

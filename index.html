@@ -6,77 +6,14 @@
     <title>Hambali Fitrianto - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/hero-section.css" rel="stylesheet">
+    <!-- <link href="assets/css/style.css" rel="stylesheet"> -->
     <link href="assets/css/navbar.css" rel="stylesheet">
+    <link href="assets/css/about.css" rel="stylesheet">
     <link href="assets/css/journey.css" rel="stylesheet">
     <!-- <link href="assets/css/contact.css" rel="stylesheet"> -->
 </head>
 <body>
-    <!-- Navbar -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Hambali Fitrianto</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
-    <!-- Navbar -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-uppercase" href="#">
-                <i class="fas fa-laptop-code me-2"></i>Hambali Fitrianto
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto text-uppercase">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about">
-                            <i class="fas fa-user me-1"></i>Tentang
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">
-                            <i class="fas fa-briefcase me-1"></i>Pengalaman
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">
-                            <i class="fas fa-graduation-cap me-1"></i>Pendidikan
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">
-                            <i class="fas fa-tools me-1"></i>Keahlian
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">
-                            <i class="fas fa-project-diagram me-1"></i>Proyek
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">
-                            <i class="fas fa-envelope me-1"></i>Kontak
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
         <div class="container">
@@ -123,17 +60,28 @@
         </div>
     </nav>    
 
-    <!-- Tanggal/Waktu di pojok kiri atas -->
-    <p id="tanggalwaktu"></p>
-
     <!-- Hero Section -->
-    <section class="hero-section text-white text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-3">Hambali Fitrianto</h1>
-            <p class="lead mb-4">Web Programmer</p>
+    <section class="hero-section text-white text-center d-flex align-items-center">
+        <div class="overlay w-100 h-100 d-flex justify-content-center align-items-center">
+            <div class="container text-center">
+                <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeIn">
+                    Welcome to My Portfolio
+                </h1>
+                <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">
+                    Hi, I'm <strong>Hambali Fitrianto</strong> <br> Web Programmer & Developer
+                </p>
+                <div class="d-flex justify-content-center">
+                    <a href="#about" class="btn btn-lg btn-primary me-3 animate__animated animate__fadeInUp animate__delay-2s">
+                        Learn More
+                    </a>
+                    <a href="#contact" class="btn btn-lg btn-outline-light animate__animated animate__fadeInUp animate__delay-3s">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
         </div>
-    </section>
-
+    </section>   
+    
     <!-- About Section -->
     <section id="about" class="py-5 bg-light">
         <div class="container">
@@ -452,52 +400,6 @@
     </section>
 
     <!-- Contact Section -->
-    <!-- <section id="contact" class="py-5 bg-light" >
-        <div class="container">
-            <div class="card shadow">
-                <div class="card-body text-center p-5">
-                    <h2 class="card-title mb-4">Get In Touch</h2>
-                    <p class="card-text mb-4">Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya.</p>
-                    <div class="social-links">
-                        <a href="https://github.com/Hambali-Fitrianto" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/hambali-fitrianto" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/capt_msf/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/hambali.fitrianto" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="mailto:hambali.fitrianto01@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <div class="card shadow-lg border-0">
-                <div class="card-body text-center p-5">
-                    <h2 class="card-title mb-4 display-4 fw-bold text-primary">Get In Touch</h2>
-                    <p class="card-text mb-4 fs-5 text-muted">Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya.</p>
-                    <div class="social-links d-flex justify-content-center gap-4">
-                        <a href="https://github.com/Hambali-Fitrianto" class="social-icon" target="_blank">
-                            <i class="fab fa-github fa-2x"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/hambali-fitrianto" class="social-icon" target="_blank">
-                            <i class="fab fa-linkedin fa-2x"></i>
-                        </a>
-                        <a href="https://www.instagram.com/capt_msf/" class="social-icon" target="_blank">
-                            <i class="fab fa-instagram fa-2x"></i>
-                        </a>
-                        <a href="https://www.facebook.com/hambali.fitrianto" class="social-icon" target="_blank">
-                            <i class="fab fa-facebook fa-2x"></i>
-                        </a>
-                        <a href="mailto:hambali.fitrianto01@gmail.com" class="social-icon">
-                            <i class="fas fa-envelope fa-2x"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    
     <section id="contact" class="py-5 bg-light">
         <div class="container">
             <div class="card shadow">
@@ -523,19 +425,6 @@
         </div>
     </footer>
 
-    <script>
-        var tw = new Date();
-        if (tw.getTimezoneOffset() == 0) (a = tw.getTime() + (7 * 60 * 60 * 1000));
-        else (a = tw.getTime());
-        tw.setTime(a);
-        var tahun = tw.getFullYear();
-        var hari = tw.getDay();
-        var bulan = tw.getMonth();
-        var tanggal = tw.getDate();
-        var hariarray = new Array("Minggu,", "Senin,", "Selasa,", "Rabu,", "Kamis,", "Jum'at,", "Sabtu,");
-        var bulanarray = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember");
-        document.getElementById("tanggalwaktu").innerHTML = hariarray[hari] + " " + tanggal + " " + bulanarray[bulan] + " " + tahun;
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/script.js"></script>
