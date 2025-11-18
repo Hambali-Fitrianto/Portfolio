@@ -19,7 +19,7 @@
             --primary-soft: rgba(37, 99, 235, 0.12);
             --dark: #020617;
             --dark-soft: #0b1220;
-            --muted: #94a3b8;        /* dibuat lebih terang */
+            --muted: #94a3b8;
             --radius-lg: 18px;
             --radius-md: 12px;
             --shadow-soft: 0 16px 45px rgba(15, 23, 42, 0.35);
@@ -37,15 +37,13 @@
             color: #e5e7eb;
         }
 
-        /* GLOBAL TEXT OVERRIDE (BIAR LEBIH JELAS) */
-        p {
-            color: #e5e7eb;
-        }
+        /* GLOBAL TEXT */
+        p { color: #e5e7eb; }
 
         .text-muted,
         .small.text-muted,
         small.text-muted {
-            color: #cbd5f5 !important;   /* lebih terang dari sebelumnya */
+            color: #cbd5f5 !important;
         }
 
         .section-desc,
@@ -56,7 +54,7 @@
             color: #cbd5f5;
         }
 
-        /* GLOBAL SECTION STYLE */
+        /* SECTIONS */
         section {
             padding-block: clamp(3.5rem, 7vw, 5rem);
         }
@@ -694,9 +692,21 @@
                             </p>
                         </div>
                         <div class="timeline-item mb-3">
+                            <p class="mb-1"><strong>Production Planning Monitoring Dashboard</strong></p>
+                            <p class="small text-muted mb-0">
+                                Improved production planning visibility and reporting with integrated dashboard.
+                            </p>
+                        </div>
+                        <div class="timeline-item mb-3">
                             <p class="mb-1"><strong>MainTENZ – Maintenance System</strong></p>
                             <p class="small text-muted mb-0">
                                 Work order & preventive maintenance management with KPI reporting via MaintainX API.
+                            </p>
+                        </div>
+                        <div class="timeline-item mb-3">
+                            <p class="mb-1"><strong>Report KPI Mekanik</strong></p>
+                            <p class="small text-muted mb-0">
+                                Cron-based sync with MaintainX API to track mechanic performance and breakdown analytics.
                             </p>
                         </div>
                         <div class="timeline-item mb-3">
@@ -825,19 +835,19 @@
     </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECTS (ALL FROM CV) -->
 <section id="projects" class="section-soft">
     <div class="container">
         <div class="section-header text-center">
             <p class="section-eyebrow mb-1">Selected Work</p>
-            <h2 class="section-title mb-1">Highlighted Projects</h2>
+            <h2 class="section-title mb-1">Projects & Systems</h2>
             <p class="section-desc mx-auto" style="max-width: 640px;">
-                A few projects that showcase my experience building integrated, production-ready systems.
+                All key projects and systems from my CV, covering manufacturing, healthcare, HR, education, and analytics.
             </p>
         </div>
 
         <div class="row g-4">
-            <!-- SAP Monitoring Center -->
+            <!-- 1 SAP Monitoring Center -->
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
                     <div class="d-flex justify-content-between align-items-center">
@@ -856,7 +866,7 @@
                 </div>
             </div>
 
-            <!-- MainTENZ -->
+            <!-- 2 MainTENZ -->
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
                     <div class="d-flex justify-content-between align-items-center">
@@ -865,8 +875,7 @@
                     </div>
                     <h5 class="mt-1 mb-1">MainTENZ – Maintenance System</h5>
                     <p class="project-tagline">
-                        Laravel-based platform integrated with MaintainX API to manage work orders, preventive schedules, 
-                        and automated KPI reports.
+                        Laravel-based platform integrated with MaintainX API to manage work orders, preventive schedules, and automated KPI reports.
                     </p>
                     <div class="d-flex flex-wrap gap-2 mt-1">
                         <span class="skill-tag">Laravel</span>
@@ -876,7 +885,7 @@
                 </div>
             </div>
 
-            <!-- Recruitment System -->
+            <!-- 3 Recruitment Management System -->
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
                     <div class="d-flex justify-content-between align-items-center">
@@ -885,7 +894,7 @@
                     </div>
                     <h5 class="mt-1 mb-1">Recruitment Management System</h5>
                     <p class="project-tagline">
-                        HR recruitment platform integrated with Talenta API using HMAC for secure employee and candidate data sync.
+                        HR recruitment platform integrated with Talenta API using HMAC for secure employee and candidate data synchronization.
                     </p>
                     <div class="d-flex flex-wrap gap-2 mt-1">
                         <span class="skill-tag">Laravel</span>
@@ -895,7 +904,83 @@
                 </div>
             </div>
 
-            <!-- Pharmacy Management -->
+            <!-- 4 AttenPay -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-clock me-1"></i> Attendance</span>
+                        <span class="small text-muted">2025</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">AttenPay – Attendance Dashboard</h5>
+                    <p class="project-tagline">
+                        Cron-based sync of daily attendance from Mekari Talenta (HMAC API), with real-time dashboards & admin UI using Laravel Inertia & React.js.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Laravel Inertia</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Talenta HMAC</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 Report KPI Mekanik -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-gauge-high me-1"></i> Analytics</span>
+                        <span class="small text-muted">2025</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">Report KPI Mekanik</h5>
+                    <p class="project-tagline">
+                        Cron-based synchronization with MaintainX API to track mechanic KPIs, breakdown history, and maintenance performance.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">MaintainX API</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Cronjob</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6 Production Planning Dashboard -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-chart-line me-1"></i> Manufacturing</span>
+                        <span class="small text-muted">2025</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">Production Planning Monitoring Dashboard</h5>
+                    <p class="project-tagline">
+                        Dashboard to improve reporting accuracy and visibility of production planning, integrating SAP data and shop-floor information.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Dashboards</span>
+                        <span class="skill-tag">SAP Data</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7 Jejak Pohon -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-tree me-1"></i> Environment</span>
+                        <span class="small text-muted">2025</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">Jejak Pohon – RFID Tree Monitoring</h5>
+                    <p class="project-tagline">
+                        RFID-based tree inventory & monitoring (NFC/keyboard-wedge, geo-tagging & map picker, tasks, health logs, photo uploads) using Laravel Inertia & React.js.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Laravel Inertia</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">RFID / NFC</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8 Pharmacy Management System -->
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
                     <div class="d-flex justify-content-between align-items-center">
@@ -914,16 +999,109 @@
                 </div>
             </div>
 
-            <!-- Sentiment Analysis -->
+            <!-- 9 RSUD Hospital Systems -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-hospital me-1"></i> Hospital</span>
+                        <span class="small text-muted">2024</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">RSUD Dr. Wahidin Sudiro Husodo Systems</h5>
+                    <p class="project-tagline">
+                        Developed and maintained APM, IGD, and ERM web systems to support hospital operations and patient services.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10 SIKUAT Dinkes -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-notes-medical me-1"></i> Health Dept</span>
+                        <span class="small text-muted">2024</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">SIKUAT – Health Information System</h5>
+                    <p class="project-tagline">
+                        Web-based health information system for Dinkes Sidoarjo to manage and monitor public health data.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Information System</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11 Apotik Ndaru Husada Farma -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-capsules me-1"></i> Pharmacy</span>
+                        <span class="small text-muted">2024</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">Apotik Ndaru Husada Farma System</h5>
+                    <p class="project-tagline">
+                        System to manage prescription handling, medicine inventory, and sales workflow for Apotik Ndaru Husada Farma Mojokerto.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12 BKPSDM HR Management -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-users-gear me-1"></i> Government HR</span>
+                        <span class="small text-muted">2024</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">BKPSDM Tapman HR Management System</h5>
+                    <p class="project-tagline">
+                        HR management system for BKPSDM Tapman Pamekasan, handling employee data, positions, and HR processes.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">HR System</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13 Petshop Management System -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-paw me-1"></i> Retail</span>
+                        <span class="small text-muted">2024</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">Petshop Management System</h5>
+                    <p class="project-tagline">
+                        Web-based system to manage product inventory, customer transactions, and pet service records for petshop operations.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14 Sentiment Analysis -->
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="chip"><i class="fa-solid fa-brain me-1"></i> Machine Learning</span>
                         <span class="small text-muted">2024</span>
                     </div>
-                    <h5 class="mt-1 mb-1">Sentiment Analysis · Madurese Herbal Reviews</h5>
+                    <h5 class="mt-1 mb-1">Sentiment Analysis – Madurese Herbal Reviews</h5>
                     <p class="project-tagline">
-                        NLP project using Python and SVM with Query Expansion Ranking to classify customer sentiment.
+                        NLP project using Python and SVM with Query Expansion Ranking to classify customer sentiment on Madurese herbal products.
                     </p>
                     <div class="d-flex flex-wrap gap-2 mt-1">
                         <span class="skill-tag">Python</span>
@@ -933,21 +1111,21 @@
                 </div>
             </div>
 
-            <!-- Petshop Management -->
+            <!-- 15 School Information System -->
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
                     <div class="d-flex justify-content-between align-items-center">
-                        <span class="chip"><i class="fa-solid fa-paw me-1"></i> Retail</span>
-                        <span class="small text-muted">2024</span>
+                        <span class="chip"><i class="fa-solid fa-school me-1"></i> Education</span>
+                        <span class="small text-muted">2023</span>
                     </div>
-                    <h5 class="mt-1 mb-1">Petshop Management System</h5>
+                    <h5 class="mt-1 mb-1">School Information System</h5>
                     <p class="project-tagline">
-                        System to manage product inventory, customer transactions, and pet service records for petshop operations.
+                        Laravel-based school information system for SD Negeri Lombang Dajah 1 Blega to manage student, teacher, and activity data.
                     </p>
                     <div class="d-flex flex-wrap gap-2 mt-1">
                         <span class="skill-tag">Laravel</span>
-                        <span class="skill-tag">Bootstrap</span>
                         <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Education System</span>
                     </div>
                 </div>
             </div>
