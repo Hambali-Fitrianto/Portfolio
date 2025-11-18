@@ -3,654 +3,1048 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hambali Fitrianto - Portfolio</title>
+    <title>Hambali Fitrianto | Web Developer & System Integration</title>
+
+    <!-- Bootstrap & Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="assets/css/hero-section.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/navbar.css" rel="stylesheet">
-    <link href="assets/css/about.css" rel="stylesheet">
-    <link href="assets/css/education.css" rel="stylesheet">
-    <link href="assets/css/journey.css" rel="stylesheet">
-    <link href="assets/css/skills.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts (optional, bisa kamu ganti) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-soft: rgba(37, 99, 235, 0.1);
+            --dark: #020617;
+            --muted: #64748b;
+            --bg-soft: #f8fafc;
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            backdrop-filter: blur(16px);
+            background: rgba(15, 23, 42, 0.75) !important;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            letter-spacing: .03em;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            text-transform: none;
+            color: #cbd5f5 !important;
+        }
+
+        .nav-link.active,
+        .nav-link:hover {
+            color: #fff !important;
+        }
+
+        .nav-link span.dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: var(--primary);
+            margin-right: 6px;
+        }
+
+        .btn-nav-primary {
+            border-radius: 999px;
+            padding: 0.45rem 1.3rem;
+            font-size: 0.85rem;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 96px;
+            padding-bottom: 72px;
+            background: radial-gradient(circle at top left, #1d4ed8 0, transparent 55%),
+                        radial-gradient(circle at bottom right, #047857 0, transparent 55%),
+                        radial-gradient(circle at top right, #0f172a 0, #020617 60%);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px 6px 6px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            font-size: 0.8rem;
+            color: #e2e8f0;
+        }
+
+        .hero-badge-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 999px;
+            background: #22c55e;
+            box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+        }
+
+        .hero-title {
+            font-size: clamp(2.3rem, 4vw, 3.1rem);
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -.03em;
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            max-width: 520px;
+            color: var(--muted);
+        }
+
+        .hero-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.32);
+            font-size: 0.8rem;
+            color: #cbd5f5;
+        }
+
+        .hero-photo-card {
+            background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35), transparent 58%),
+                        rgba(15, 23, 42, 0.95);
+            border-radius: 24px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-photo-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(56,189,248,.18), transparent 55%);
+            pointer-events: none;
+        }
+
+        .hero-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 999px;
+            object-fit: cover;
+            border: 3px solid rgba(148,163,184,0.8);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+        }
+
+        .hero-stat {
+            font-size: 0.72rem;
+            color: var(--muted);
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #e5e7eb;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 72px 0;
+        }
+
+        .section-light {
+            background: #020617;
+        }
+
+        .section-soft {
+            background: #020617;
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-eyebrow {
+            font-size: 0.8rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .section-desc {
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        .card-glass {
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            color: #e5e7eb;
+        }
+
+        .chip-soft {
+            background: rgba(15, 23, 42, 0.7);
+            border-style: dashed;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            background: rgba(37, 99, 235, 0.12);
+            color: #dbeafe;
+            border: 1px solid rgba(37, 99, 235, 0.35);
+        }
+
+        /* EXPERIENCE */
+        .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 0.35rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: var(--primary);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 1.7rem;
+            bottom: -1.4rem;
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(148,163,184,0.9), transparent);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .company-tag {
+            font-size: 0.78rem;
+            color: #93c5fd;
+        }
+
+        .badge-role {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: rgba(148, 163, 184, 0.15);
+        }
+
+        /* SKILLS GRID */
+        .skill-group {
+            border-radius: var(--radius-md);
+            background: rgba(15,23,42,0.9);
+            border: 1px solid rgba(148,163,184,0.3);
+            padding: 1.25rem 1.4rem;
+            height: 100%;
+        }
+
+        .skill-group h6 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            color: var(--muted);
+        }
+
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            margin: 2px;
+            white-space: nowrap;
+        }
+
+        /* PROJECTS */
+        .project-card {
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(148,163,184,0.35);
+            background: radial-gradient(circle at top left, rgba(37,99,235,.2), transparent 50%),
+                        rgba(15,23,42,0.96);
+            padding: 1.4rem 1.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: .7rem;
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+            border-color: rgba(59,130,246,0.8);
+        }
+
+        .project-tagline {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        /* CONTACT */
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 4px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            color: #e5e7eb;
+            font-size: 1.05rem;
+            transition: all .2s ease;
+        }
+
+        .social-icon:hover {
+            background: rgba(37, 99, 235, 0.15);
+            border-color: rgba(59,130,246,0.8);
+            transform: translateY(-2px);
+            color: #bfdbfe;
+        }
+
+        .contact-card {
+            border-radius: var(--radius-lg);
+            background: rgba(15,23,42,0.95);
+            border: 1px solid rgba(148,163,184,0.4);
+            padding: 1.8rem;
+        }
+
+        footer {
+            border-top: 1px solid rgba(148, 163, 184, 0.25);
+            background: #020617;
+        }
+
+        /* RESPONSIVE TWEAKS */
+        @media (max-width: 991.98px) {
+            .hero {
+                text-align: center;
+            }
+            .hero-subtitle {
+                margin-inline: auto;
+            }
+            .hero-photo-card {
+                margin-top: 2.5rem;
+            }
+            .timeline-item {
+                padding-left: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-uppercase text-light" href="#">
-                <i class="fas fa-code me-2"></i>Hambali Fitrianto
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+            <span class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width:28px;height:28px;">
+                <i class="fas fa-code fa-sm"></i>
+            </span>
+            <span>Hambali Fitrianto</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+            <ul class="navbar-nav align-items-lg-center gap-lg-1">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#about"><span class="dot"></span>About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item d-lg-inline-block d-none">
+                    <a class="btn btn-sm btn-primary ms-2 btn-nav-primary" href="#contact">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+            <a class="btn btn-sm btn-outline-light ms-lg-3 mt-3 mt-lg-0 btn-nav-primary" href="assets/documents/CV_HAMBALI FITRIANTO.pdf" target="_blank">
+                <i class="fas fa-file-arrow-down me-1"></i> CV
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto text-uppercase">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">
-                            <i class="fas fa-user me-1"></i>About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">
-                            <i class="fas fa-briefcase me-1"></i>Experience
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">
-                            <i class="fas fa-graduation-cap me-1"></i>Education
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">
-                            <i class="fas fa-tools me-1"></i>Skills
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">
-                            <i class="fas fa-project-diagram me-1"></i>Projects
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#organization">
-                            <i class="fas fa-users me-1"></i>Organization
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#certificates">
-                            <i class="fas fa-certificate me-1"></i>Certificates
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#achievements">
-                            <i class="fas fa-trophy me-1"></i>Achievements
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">
-                            <i class="fas fa-envelope me-1"></i>Contact
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </div>
-    </nav>    
+    </div>
+</nav>
 
-    <!-- HERO -->
-    <section class="hero-section text-white text-center d-flex align-items-center">
-        <div class="overlay w-100 h-100 d-flex justify-content-center align-items-center">
-            <div class="container text-center">
-                <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeIn">
-                    Welcome to My Portfolio
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <!-- LEFT -->
+            <div class="col-lg-7">
+                <div class="mb-3">
+                    <span class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        Available for Web Dev & System Integration
+                    </span>
+                </div>
+                <h1 class="hero-title mb-3">
+                    Web Developer &<br>System Integration Engineer
                 </h1>
-                <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">
-                    Hi, I am <strong>Hambali Fitrianto</strong> <br> Web Developer | System Integration
+                <p class="hero-subtitle mb-3">
+                    I build integrated information systems using <strong>PHP (Laravel)</strong> and <strong>Python</strong>, 
+                    connecting <strong>SAP</strong>, <strong>Mekari Talenta</strong>, <strong>MaintainX</strong>, and other APIs 
+                    into real-time dashboards, recruitment platforms, and maintenance systems.
                 </p>
-                <div class="d-flex justify-content-center">
-                    <a href="#about" class="btn btn-lg btn-primary me-3 animate__animated animate__fadeInUp animate__delay-2s">
-                        Learn More
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <span class="hero-chip">
+                        <i class="fa-solid fa-diagram-project fa-xs"></i> SAP · Talenta · MaintainX
+                    </span>
+                    <span class="hero-chip">
+                        <i class="fa-solid fa-code fa-xs"></i> Laravel · Inertia · React.js
+                    </span>
+                    <span class="hero-chip">
+                        <i class="fa-solid fa-database fa-xs"></i> MySQL · PostgreSQL
+                    </span>
+                </div>
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                    <a href="#contact" class="btn btn-primary btn-lg px-4">
+                        <i class="fa-solid fa-paper-plane me-2"></i>Hire Me
                     </a>
-                    <a href="#contact" class="btn btn-lg btn-outline-light animate__animated animate__fadeInUp animate__delay-3s">
-                        Contact Me
+                    <a href="#projects" class="btn btn-outline-light btn-lg px-4">
+                        View Projects
                     </a>
                 </div>
             </div>
-        </div>
-    </section>   
-    
-    <!-- ABOUT -->
-    <section id="about" class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 text-center mb-4 mb-lg-0">
-                    <div class="profile-container position-relative">
-                        <img src="assets/images/profile.jpg" 
-                            alt="Hambali Fitrianto" 
-                            class="rounded-circle border border-primary border-3 shadow profile-img" 
-                            style="width: 200px; height: 200px; object-fit: cover;">
-                        <div class="profile-info">
-                            <h4>Hambali Fitrianto</h4>
-                            <p>Web Developer | System Integration</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow">
-                        <div class="card-body p-4">
-                            <h3 class="card-title text-center text-lg-start mb-3">About Me</h3>
-                            <p class="card-text">
-                                Web Developer with experience building integrated information systems using 
-                                <span class="fw-bold">PHP (Laravel)</span> and <span class="fw-bold">Python</span>. 
-                                Skilled in developing real-time monitoring dashboards, HR recruitment platforms, and 
-                                maintenance management systems integrated with enterprise APIs such as 
-                                <span class="fw-bold">SAP RFC &amp; OData</span>, <span class="fw-bold">Mekari Talenta (HMAC)</span>, 
-                                <span class="fw-bold">MaintainX</span>, and <span class="fw-bold">Wablas WhatsApp API</span>.
-                            </p>
-                            <p class="card-text">
-                                Proficient in <span class="fw-bold">MySQL</span> and <span class="fw-bold">PostgreSQL</span>, 
-                                <span class="fw-bold">Linux server administration (Debian, SUSE)</span>, and secure API development. 
-                                Hands-on with <span class="fw-bold">Laravel Inertia</span>, <span class="fw-bold">React.js</span>, 
-                                <span class="fw-bold">Tableau</span>, and <span class="fw-bold">Figma</span> to deliver modern, responsive, 
-                                and intuitive web applications. Committed to clean, scalable code and driving digital transformation 
-                                through collaboration and continuous learning.
-                            </p>
-                            <p class="card-text mb-3">
-                                Saat ini saya berfokus pada pengembangan <em>integrated systems</em> untuk manufaktur, kesehatan, dan instansi pemerintah, 
-                                dengan penekanan pada <span class="fw-bold">system integration</span>, <span class="fw-bold">secure API communication</span>, 
-                                dan <span class="fw-bold">data-driven decision making</span>.
-                            </p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary me-1 mb-1">PHP</span>
-                                <span class="badge bg-primary me-1 mb-1">Laravel</span>
-                                <span class="badge bg-primary me-1 mb-1">Python</span>
-                                <span class="badge bg-primary me-1 mb-1">React.js</span>
-                                <span class="badge bg-primary me-1 mb-1">Inertia</span>
-                                <span class="badge bg-primary me-1 mb-1">MySQL</span>
-                                <span class="badge bg-primary me-1 mb-1">PostgreSQL</span>
-                                <span class="badge bg-primary me-1 mb-1">Linux Server</span>
-                                <span class="badge bg-primary me-1 mb-1">RESTful API</span>
+
+            <!-- RIGHT -->
+            <div class="col-lg-5">
+                <div class="hero-photo-card text-center">
+                    <img src="assets/images/profile.jpg" alt="Hambali Fitrianto" class="hero-photo mb-3">
+                    <h5 class="mb-1">Hambali Fitrianto</h5>
+                    <p class="text-muted small mb-3">Bangkalan, East Java · Web Developer</p>
+
+                    <div class="row g-3 text-start mb-3">
+                        <div class="col-6">
+                            <div class="hero-stat">
+                                <strong>3.5 Years</strong>
+                                Academic completion<br>with GPA 3.71 / 4.00
                             </div>
-                            <div class="text-center text-lg-start">
-                                <a href="assets/documents/CV_HAMBALI FITRIANTO.pdf" class="btn btn-primary me-2" target="_blank">
-                                    <i class="fas fa-file-download me-2"></i>Unduh Resume
-                                </a>
-                                <a href="#projects" class="btn btn-outline-primary">
-                                    <i class="fas fa-folder-open me-2"></i>Lihat Proyek
-                                </a>
+                        </div>
+                        <div class="col-6">
+                            <div class="hero-stat">
+                                <strong>10+ Systems</strong>
+                                Healthcare, HR, Edu &<br>Manufacturing solutions
                             </div>
                         </div>
                     </div>
+
+                    <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                        <span class="pill"><i class="fa-solid fa-building me-1"></i> PT Kayu Mebel Indonesia</span>
+                        <span class="pill"><i class="fa-solid fa-hospital me-1"></i> RSUD · Dinkes · BKPSDM</span>
+                    </div>
+
+                    <div class="d-flex justify-content-center gap-2 mt-1">
+                        <a href="https://porto.hambalifitrianto.web.id" target="_blank" class="social-icon" title="Portfolio Website">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        <a href="https://github.com/Hambali-Fitrianto" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/hambali-fitrianto" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:hambali.fitrianto01@gmail.com" class="social-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>    
+    </div>
+</section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center fw-bold display-6 mb-5">Experience</h2>
-            <div class="row g-4">
+<!-- ABOUT & EDUCATION -->
+<section id="about" class="section-soft">
+    <div class="container">
+        <div class="section-header text-center">
+            <p class="section-eyebrow mb-1">About & Background</p>
+            <h2 class="section-title mb-1">Who I Am</h2>
+            <p class="section-desc mx-auto" style="max-width: 640px;">
+                Web Developer specialized in <strong>integrated information systems</strong> and 
+                <strong>API-driven applications</strong> with strong foundations in Informatics Engineering.
+            </p>
+        </div>
 
-                <!-- KMI -->
-                <div class="col-md-6">
-                    <div class="card shadow h-100">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-2 text-primary">Web Developer (Contract)</h5>
-                            <h6 class="text-muted mb-1">PT. Kayu Mebel Indonesia (KMI)</h6>
-                            <p class="text-muted small mb-3">
-                                Sidoarjo, East Java · <i class="fas fa-calendar-alt me-1"></i>Aug 2025 – Present
-                            </p>
-                            <hr>
-                            <ul class="ps-3">
-                                <li>Developed a real-time <span class="fw-bold">SAP Monitoring Center</span> using Python RFC to track production work center performance.</li>
-                                <li>Built and maintained a <span class="fw-bold">Recruitment System (HR)</span> integrated with <span class="fw-bold">Mekari Talenta API (HMAC)</span> for employee data synchronization.</li>
-                                <li>Designed and implemented a <span class="fw-bold">Production Planning Monitoring Dashboard</span> to improve reporting accuracy and visibility.</li>
-                                <li>Developed <span class="fw-bold">MainTENZ (Maintenance System)</span> for work order management, preventive schedules, and performance tracking.</li>
-                                <li>Created <span class="fw-bold">Report KPI Mekanik</span> – cron-based sync with <span class="fw-bold">MaintainX API</span> to track mechanic performance and breakdown analytics.</li>
-                                <li>Built <span class="fw-bold">AttenPay</span> – cron-based sync of daily attendance from <span class="fw-bold">Mekari Talenta (HMAC API)</span>, providing real-time dashboards &amp; admin UI using <span class="fw-bold">Laravel Inertia &amp; React.js</span>.</li>
-                                <li>Developed <span class="fw-bold">Jejak Pohon</span> – RFID-based tree inventory &amp; monitoring (NFC/keyboard-wedge scanning, geo-tagging &amp; map picker, scheduled/reactive tasks, health logs &amp; photo uploads) with Laravel Inertia &amp; React.js.</li>
-                                <li>Managed Git versioning, deployment, and server configuration across <span class="fw-bold">Debian</span> and <span class="fw-bold">SUSE Linux</span> environments.</li>
-                            </ul>
-                        </div>
+        <div class="row g-4 align-items-stretch">
+            <div class="col-lg-7">
+                <div class="card-glass p-4 h-100">
+                    <h5 class="mb-3">Professional Summary</h5>
+                    <p class="mb-2">
+                        I have hands-on experience building <strong>real-time monitoring dashboards</strong>, 
+                        <strong>HR recruitment platforms</strong>, and <strong>maintenance management systems</strong> 
+                        using <strong>PHP (Laravel)</strong> and <strong>Python</strong>, integrated with 
+                        <strong>SAP RFC & OData</strong>, <strong>Mekari Talenta (HMAC)</strong>, 
+                        <strong>MaintainX</strong>, and <strong>Wablas WhatsApp API</strong>.
+                    </p>
+                    <p class="mb-2">
+                        I’m comfortable with <strong>MySQL/PostgreSQL</strong>, 
+                        <strong>Linux servers (Debian, SUSE)</strong>, <strong>Nginx</strong>, 
+                        <strong>cron jobs</strong>, and <strong>Laravel Scheduler</strong>, ensuring systems 
+                        run securely and reliably in production.
+                    </p>
+                    <p class="mb-3">
+                        I use <strong>Laravel Inertia</strong>, <strong>React.js</strong>, <strong>Tableau</strong>, 
+                        and <strong>Figma</strong> to deliver modern, responsive, and intuitive web applications, 
+                        following clean code principles and collaborative workflows with <strong>Git/GitHub</strong>.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mt-2">
+                        <span class="chip-soft"><i class="fa-solid fa-plug me-1"></i> System Integration</span>
+                        <span class="chip-soft"><i class="fa-solid fa-shield-halved me-1"></i> Secure API Communication</span>
+                        <span class="chip-soft"><i class="fa-solid fa-chart-line me-1"></i> Data-driven Decisions</span>
+                        <span class="chip-soft"><i class="fa-solid fa-people-group me-1"></i> Team Collaboration</span>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="card-glass p-4 h-100">
+                    <h6 class="text-uppercase text-muted small mb-2">Education</h6>
+                    <h5 class="mb-1">Bachelor of Informatics Engineering</h5>
+                    <p class="mb-1">Trunojoyo University Madura</p>
+                    <p class="small text-muted mb-2">Sep 2020 – Jan 2024 · Bangkalan, East Java</p>
+                    <p class="mb-1"><strong>GPA:</strong> 3.71 / 4.00</p>
+                    <p class="mb-2">
+                        Final Project: <em>“Sentiment Analysis on Madurese Herbal Reviews using SVM and Query Expansion Ranking.”</em>
+                    </p>
+                    <p class="small text-muted mb-3">
+                        Specialized in machine learning, data analysis, and web-based application development. 
+                        Collaborated using Git/GitHub across multiple projects.
+                    </p>
+                    <a href="https://maps.app.goo.gl/5rMFtxfCVy2YT5CH7" target="_blank" class="btn btn-outline-light btn-sm mb-3">
+                        <i class="fa-solid fa-location-dot me-2"></i>View Campus
+                    </a>
 
-                <!-- NATUSI -->
-                <div class="col-md-6">
-                    <div class="card shadow h-100">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-2 text-primary">Web Developer (Contract)</h5>
-                            <h6 class="text-muted mb-1">CV. Natusi</h6>
-                            <p class="text-muted small mb-3">
-                                Mojokerto, East Java · <i class="fas fa-calendar-alt me-1"></i>Oct 2024 – May 2025
-                            </p>
-                            <hr>
-                            <ul class="ps-3">
-                                <li>Designed and developed responsive, high-performance web applications for healthcare and government institutions.</li>
-                                <li>Improved code structure and reduced bugs through <span class="fw-bold">Git-based</span> version control and code review processes.</li>
-                                <li>Delivered and maintained systems for:
-                                    <ul>
-                                        <li><span class="fw-bold">RSUD Dr. Wahidin Sudiro Husodo Mojokerto</span> (APM, IGD, ERM Systems)</li>
-                                        <li><span class="fw-bold">Dinkes Sidoarjo</span> (SIKUAT Health Information System)</li>
-                                        <li><span class="fw-bold">Apotik Ndaru Husada Farma Mojokerto</span></li>
-                                        <li><span class="fw-bold">BKPSDM Tapman Pamekasan</span> (HR Management System)</li>
-                                    </ul>
-                                </li>
-                                <li>Developed a <span class="fw-bold">Petshop Management System</span> to manage inventory, customer transactions, and pet service records.</li>
-                                <li>Provided technical support, troubleshooting, and enhancements for production systems.</li>
-                            </ul>
-                        </div>
+                    <hr class="border-secondary">
+
+                    <h6 class="text-uppercase text-muted small mb-1">Research</h6>
+                    <p class="small mb-2">
+                        Published in NERO Journal: <br>
+                        <em>“Implementation of SVM with Query Expansion Ranking on Madurese Herbal Reviews.”</em>
+                    </p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://journal.trunojoyo.ac.id/nero/article/view/27785" target="_blank" class="chip">
+                            <i class="fa-solid fa-up-right-from-square me-1"></i>See Abstract
+                        </a>
+                        <a href="https://journal.trunojoyo.ac.id/nero/article/view/27785/10289" target="_blank" class="chip">
+                            <i class="fa-solid fa-file-pdf me-1"></i>Download PDF
+                        </a>
                     </div>
                 </div>
-
-                <!-- SD Lombang -->
-                <div class="col-md-6">
-                    <div class="card shadow h-100">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-2 text-primary">Web Programmer (Internship)</h5>
-                            <h6 class="text-muted mb-1">SD Negeri Lombang Dajah 1 Blega</h6>
-                            <p class="text-muted small mb-3">
-                                Bangkalan, East Java · <i class="fas fa-calendar-alt me-1"></i>Dec 2022 – Jan 2023
-                            </p>
-                            <hr>
-                            <ul class="ps-3">
-                                <li>Developed a <span class="fw-bold">School Information System</span> using Laravel to manage student, teacher, and activity data.</li>
-                                <li>Integrated <span class="fw-bold">Tableau</span> dashboards for performance analysis and reporting.</li>
-                                <li>Provided technical maintenance for hardware and software to ensure system stability.</li>
-                            </ul>                            
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- EDUCATION -->
-    <section id="education" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Education</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body text-center">
-                            <img src="assets/images/logo-utm.png" alt="Logo Universitas Trunojoyo Madura" class="img-fluid mb-3" style="max-width: 120px;">
-                            <h5 class="card-title">Bachelor of Informatics Engineering</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Trunojoyo University Madura</h6>
-                            <p class="card-text">
-                                Focus on software development, information systems, machine learning, data analysis, and web technology.
-                            </p>
-                            <p class="mb-1"><span class="fw-bold">GPA:</span> 3.71 / 4.00</p>
-                            <p class="mb-1"><span class="fw-bold">Period:</span> Sep 2020 – Jan 2024</p>
-                            <p class="card-text mt-2">
-                                Final Project: <em>“Sentiment Analysis on Madurese Herbal Reviews using SVM and Query Expansion Ranking.”</em><br>
-                                Actively used Git/GitHub for collaborative development and project management.
-                            </p>
-                            <a href="https://maps.app.goo.gl/5rMFtxfCVy2YT5CH7" class="btn btn-outline-primary mt-3" target="_blank">
-                                <i class="fas fa-map-marker-alt me-2"></i>View Campus Location
-                            </a>
+<!-- EXPERIENCE -->
+<section id="experience" class="section-light">
+    <div class="container">
+        <div class="section-header text-center">
+            <p class="section-eyebrow mb-1">Experience</p>
+            <h2 class="section-title mb-1">Where I’ve Worked</h2>
+            <p class="section-desc mx-auto" style="max-width: 640px;">
+                Experience delivering integrated systems for <strong>manufacturing</strong>, 
+                <strong>healthcare</strong>, <strong>education</strong>, and 
+                <strong>government institutions</strong>.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <!-- KMI -->
+            <div class="col-lg-6">
+                <div class="card-glass p-4 h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <span class="badge-role mb-1">Web Developer (Contract)</span>
+                            <h5 class="mb-0">PT. Kayu Mebel Indonesia (KMI)</h5>
+                            <p class="company-tag mb-0">Sidoarjo, East Java · Aug 2025 – Present</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- Journal -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body text-center">
-                            <img src="assets/images/research-icon.png" alt="Jurnal Tugas Akhir" class="img-fluid mb-3" style="max-width: 120px;">
-                            <h5 class="card-title">Journal Thesis</h5>
-                            <p class="card-text">
-                                Published research in NERO Journal:<br>
-                                <em>“Implementation of SVM with Query Expansion Ranking on Madurese Herbal Reviews.”</em>
+                    <div class="timeline mt-3">
+                        <div class="timeline-item mb-3">
+                            <p class="mb-1"><strong>SAP Monitoring Center</strong></p>
+                            <p class="small text-muted mb-0">
+                                Built real-time dashboard using Python RFC & Laravel to track production work center performance.
                             </p>
-                            <div class="journal-preview mb-3">
-                                <iframe 
-                                    src="assets/documents/Jurnal-Skripsi.pdf" 
-                                    style="width: 100%; height: 200px; border: 1px solid #ddd;" 
-                                    scrolling="auto"
-                                    title="Preview Jurnal Tugas Akhir">
-                                </iframe>
+                        </div>
+                        <div class="timeline-item mb-3">
+                            <p class="mb-1"><strong>Recruitment System (HR) · Talenta API</strong></p>
+                            <p class="small text-muted mb-0">
+                                Integrated Mekari Talenta (HMAC Authentication) for employee data sync and recruitment workflow.
+                            </p>
+                        </div>
+                        <div class="timeline-item mb-3">
+                            <p class="mb-1"><strong>MainTENZ – Maintenance System</strong></p>
+                            <p class="small text-muted mb-0">
+                                Work order & preventive maintenance management with KPI reporting via MaintainX API.
+                            </p>
+                        </div>
+                        <div class="timeline-item mb-3">
+                            <p class="mb-1"><strong>AttenPay · Attendance Dashboard</strong></p>
+                            <p class="small text-muted mb-0">
+                                Cron-based sync of daily attendance from Talenta (HMAC API), using Laravel Inertia & React.js 
+                                to deliver real-time dashboards and admin UI.
+                            </p>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="mb-1"><strong>Jejak Pohon – RFID Tree Monitoring</strong></p>
+                            <p class="small text-muted mb-0">
+                                RFID-based inventory & monitoring (NFC/keyboard-wedge, geo-tagging, tasks, health logs, photo uploads).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mt-3 d-flex flex-wrap gap-2">
+                        <span class="skill-tag">Python RFC</span>
+                        <span class="skill-tag">Laravel Inertia</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">SAP RFC & OData</span>
+                        <span class="skill-tag">Talenta HMAC</span>
+                        <span class="skill-tag">MaintainX API</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Natusi + Internship -->
+            <div class="col-lg-6">
+                <div class="card-glass p-4 h-100">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <span class="badge-role mb-1">Web Developer (Contract)</span>
+                                <h5 class="mb-0">CV. Natusi</h5>
+                                <p class="company-tag mb-0">Mojokerto, East Java · Oct 2024 – May 2025</p>
                             </div>
-                            <div class="d-flex justify-content-center gap-2">
-                                <a href="https://journal.trunojoyo.ac.id/nero/article/view/27785" class="btn btn-outline-primary" target="_blank">
-                                    <i class="fas fa-external-link-alt me-2"></i>See Abstract
-                                </a>
-                                <a href="https://journal.trunojoyo.ac.id/nero/article/view/27785/10289" class="btn btn-outline-primary" target="_blank">
-                                    <i class="fas fa-file-pdf me-2"></i>Download Full Text
-                                </a>
+                        </div>
+                        <div class="timeline mt-3">
+                            <div class="timeline-item mb-3">
+                                <p class="mb-1"><strong>Healthcare & Government Systems</strong></p>
+                                <p class="small text-muted mb-0">
+                                    Delivered systems for RSUD Dr. Wahidin Sudiro Husodo (APM, IGD, ERM), Dinkes Sidoarjo (SIKUAT),
+                                    Apotik Ndaru Husada Farma, and BKPSDM Tapman Pamekasan (HR system).
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="mb-1"><strong>Petshop Management System</strong></p>
+                                <p class="small text-muted mb-0">
+                                    Web-based app for inventory, transactions, and pet service records with structured Git workflows.
+                                </p>
                             </div>
                         </div>
                     </div>
+
+                    <hr class="border-secondary">
+
+                    <div>
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <span class="badge-role mb-1">Web Programmer (Internship)</span>
+                                <h5 class="mb-0">SD Negeri Lombang Dajah 1 Blega</h5>
+                                <p class="company-tag mb-0">Bangkalan, East Java · Dec 2022 – Jan 2023</p>
+                            </div>
+                        </div>
+                        <div class="timeline mt-3">
+                            <div class="timeline-item mb-3">
+                                <p class="mb-1"><strong>School Information System</strong></p>
+                                <p class="small text-muted mb-0">
+                                    Built Laravel-based system to manage student, teacher, and activity data.
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="mb-1"><strong>Tableau Dashboards</strong></p>
+                                <p class="small text-muted mb-0">
+                                    Integrated Tableau for performance analysis and reporting; provided tech maintenance support.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 d-flex flex-wrap gap-2">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Tableau</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- FUN JOURNEY (biarkan seperti semula) -->
-    <section id="journey" class="py-5">
-        <div class="container">
-            <div class="d-flex justify-content-center align-items-center position-relative" style="height: 200px;">
-                <div id="house" class="position-absolute">
-                    <img src="assets/images/rumah.png" alt="Rumah" style="width: 150px; height: 150px;">
-                </div>
-                <div id="campus" class="position-absolute">
-                    <img src="assets/images/utm.jpg" alt="Kampus" style="width: 200px; height: 100px;">
-                </div>
-                <div id="person" class="position-absolute">
-                    <img src="assets/images/ibal.png" alt="Orang Berjalan" style="width: 200px; height: 200px;">
-                </div>
-            </div>
-        </div>
-    </section>    
-    
-    <!-- SKILLS -->
-    <section id="skills" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">My Skills</h2>
-            <div class="row g-4 mb-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow text-center skill-card">
-                        <div class="skill-icon">
-                            <img src="assets/images/icon-skills/php.png" class="card-img-top mb-3" alt="PHP" style="max-width: 80px; margin: 0 auto;">
-                            <div class="skill-info">PHP</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow text-center skill-card">
-                        <div class="skill-icon">
-                            <img src="assets/images/icon-skills/laravel.png" class="card-img-top mb-3" alt="Laravel" style="max-width: 80px; margin: 0 auto;">
-                            <div class="skill-info">Laravel</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow text-center skill-card">
-                        <div class="skill-icon">
-                            <img src="assets/images/icon-skills/html.png" class="card-img-top mb-3" alt="HTML" style="max-width: 80px; margin: 0 auto;">
-                            <div class="skill-info">HTML</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow text-center skill-card">
-                        <div class="skill-icon">
-                            <img src="assets/images/icon-skills/css.png" class="card-img-top mb-3" alt="CSS" style="max-width: 80px; margin: 0 auto;">
-                            <div class="skill-info">CSS</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow text-center skill-card">
-                        <div class="skill-icon">
-                            <img src="assets/images/icon-skills/javascript.png" class="card-img-top mb-3" alt="JavaScript" style="max-width: 80px; margin: 0 auto;">
-                            <div class="skill-info">JavaScript</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow text-center skill-card">
-                        <div class="skill-icon">
-                            <img src="assets/images/icon-skills/git.png" class="card-img-top mb-3" alt="Git" style="max-width: 80px; margin: 0 auto;">
-                            <div class="skill-info">Git</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow text-center skill-card">
-                        <div class="skill-icon">
-                            <img src="assets/images/icon-skills/mysql.png" class="card-img-top mb-3" alt="MySQL" style="max-width: 80px; margin: 0 auto;">
-                            <div class="skill-info">MySQL</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow text-center skill-card">
-                        <div class="skill-icon">
-                            <img src="assets/images/icon-skills/postgresql.png" class="card-img-top mb-3" alt="PostgreSQL" style="max-width: 80px; margin: 0 auto;">
-                            <div class="skill-info">PostgreSQL</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Detail Tech Stack -->
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <h5 class="mb-3">Technical Skills</h5>
-                    <ul>
-                        <li><span class="fw-bold">Programming Languages:</span> PHP, Python, JavaScript, HTML, CSS</li>
-                        <li><span class="fw-bold">Frameworks &amp; Libraries:</span> Laravel, Inertia, React.js, Bootstrap, jQuery, Tailwind CSS</li>
-                        <li><span class="fw-bold">API &amp; Integrations:</span> SAP RFC &amp; OData, Mekari Talenta (HMAC Authentication), MaintainX API, Wablas WhatsApp API, RESTful API Development</li>
-                        <li><span class="fw-bold">Database Management:</span> MySQL, PostgreSQL</li>
-                        <li><span class="fw-bold">DevOps &amp; Server Management:</span> Debian, SUSE Linux, Nginx, Cronjob, Laravel Scheduler</li>
+        <!-- Organization & Certificates -->
+        <div class="row g-4 mt-4">
+            <div class="col-lg-6">
+                <div class="card-glass p-4 h-100">
+                    <h6 class="text-uppercase text-muted small mb-2">Organizational Experience</h6>
+                    <h5 class="mb-1">Information Technology Center (ITC)</h5>
+                    <p class="company-tag mb-2">Trunojoyo University Madura · Member · Nov 2020 – Dec 2023</p>
+                    <ul class="small mb-0">
+                        <li>Conducted trainings on Laravel, PHP, JavaScript, and MySQL.</li>
+                        <li>Mentored students on API integration, UI/UX design, and clean coding practices.</li>
+                        <li>Promoted structured development workflows using Git & GitHub.</li>
                     </ul>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <h5 class="mb-3">Tools &amp; Core Competencies</h5>
-                    <ul>
-                        <li><span class="fw-bold">Data Visualization:</span> Tableau, Power BI</li>
-                        <li><span class="fw-bold">Version Control:</span> Git, GitHub (Branching, Pull Requests, CI/CD)</li>
-                        <li><span class="fw-bold">UI/UX Design:</span> Figma (Wireframe, Prototype, Responsive Layout)</li>
-                        <li><span class="fw-bold">Other Tools:</span> Postman, Microsoft Office, Visual Studio Code</li>
-                        <li><span class="fw-bold">Core Competencies:</span> System Integration, Secure API Communication, Data Analysis, Clean Code, Team Collaboration</li>
+            </div>
+            <div class="col-lg-6">
+                <div class="card-glass p-4 h-100">
+                    <h6 class="text-uppercase text-muted small mb-2">Certificates</h6>
+                    <ul class="small mb-0">
+                        <li><strong>Web Development for Beginners:</strong> Becoming a Fullstack Web Developer (2024)</li>
+                        <li><strong>Microsoft Excel:</strong> Managing Thousands of Data Efficiently (2024)</li>
+                        <li><strong>Webinar:</strong> Exploring English Skills (2022)</li>
+                    </ul>
+                    <hr class="border-secondary my-3">
+                    <h6 class="text-uppercase text-muted small mb-2">Key Achievements</h6>
+                    <ul class="small mb-0">
+                        <li>Graduated in <strong>3.5 years</strong> with GPA <strong>3.71/4.00</strong>.</li>
+                        <li>Published research paper in NERO Journal (SVM + Query Expansion Ranking).</li>
+                        <li>Delivered integrated systems connecting <strong>SAP</strong>, <strong>MaintainX</strong>, and <strong>Talenta</strong>.</li>
+                        <li>Recognized for clean code, secure API integration, and on-time delivery.</li>
                     </ul>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- PROJECTS -->
-    <section id="projects" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">My Projects</h2>
-            <div class="row g-4">
+    </div>
+</section>
 
-                <!-- SAP Monitoring Center -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">SAP Monitoring Center (2025)</h5>
-                            <p class="card-text">
-                                Real-time dashboard using Python RFC and Laravel to monitor production work centers and improve visibility of SAP data.
-                            </p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary tech-badge">Python</span>
-                                <span class="badge bg-primary tech-badge">Laravel</span>
-                                <span class="badge bg-primary tech-badge">SAP RFC</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MainTENZ -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">MainTENZ – Maintenance System (2025)</h5>
-                            <p class="card-text">
-                                Laravel-based platform integrated with MaintainX API to manage work orders, preventive schedules, and mechanic KPI reports.
-                            </p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary tech-badge">Laravel</span>
-                                <span class="badge bg-primary tech-badge">MaintainX API</span>
-                                <span class="badge bg-primary tech-badge">Cronjob</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recruitment System -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Recruitment Management System (2024)</h5>
-                            <p class="card-text">
-                                HR recruitment system integrated with Talenta API using HMAC authentication to synchronize employee and candidate data.
-                            </p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary tech-badge">Laravel</span>
-                                <span class="badge bg-primary tech-badge">Talenta API</span>
-                                <span class="badge bg-primary tech-badge">HMAC</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pharmacy Management System -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Pharmacy Management System (2024)</h5>
-                            <p class="card-text">
-                                Web-based application for managing pharmacy inventory, sales, and drug distribution processes.
-                            </p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary tech-badge">PHP</span>
-                                <span class="badge bg-primary tech-badge">Laravel</span>
-                                <span class="badge bg-primary tech-badge">MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sentiment Analysis -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Sentiment Analysis on Madurese Herbal Reviews (2024)</h5>
-                            <p class="card-text">
-                                Machine learning project using Python and SVM with Query Expansion Ranking to analyze sentiment from customer reviews.
-                            </p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary tech-badge">Python</span>
-                                <span class="badge bg-primary tech-badge">SVM</span>
-                                <span class="badge bg-primary tech-badge">NLP</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Petshop Management System -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Petshop Management System</h5>
-                            <p class="card-text">
-                                Web-based system to manage product inventory, customer transactions, and pet service records for a petshop business.
-                            </p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary tech-badge">PHP</span>
-                                <span class="badge bg-primary tech-badge">Laravel</span>
-                                <span class="badge bg-primary tech-badge">MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ORGANIZATIONAL EXPERIENCE -->
-    <section id="organization" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Organizational Experience</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card shadow h-100">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-2 text-primary">Information Technology Center (ITC)</h5>
-                            <h6 class="text-muted mb-1">Trunojoyo University Madura</h6>
-                            <p class="text-muted small mb-3">
-                                Member · <i class="fas fa-calendar-alt me-1"></i>Nov 2020 – Dec 2023
-                            </p>
-                            <ul class="ps-3">
-                                <li>Conducted training and workshops on Laravel, PHP, JavaScript, and MySQL.</li>
-                                <li>Mentored students on API integration, UI/UX design, and clean coding practices.</li>
-                                <li>Promoted the use of Git and GitHub for collaborative and structured development.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CERTIFICATES -->
-    <section id="certificates" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Certificates</h2>
-            <div class="row justify-content-center g-4">
-                <div class="col-md-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-certificate fa-2x mb-3"></i>
-                            <h5 class="card-title">Web Development for Beginners</h5>
-                            <p class="card-text mb-1">Becoming a Fullstack Web Developer</p>
-                            <p class="text-muted mb-0">2024</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-certificate fa-2x mb-3"></i>
-                            <h5 class="card-title">Microsoft Excel</h5>
-                            <p class="card-text mb-1">Managing Thousands of Data Efficiently</p>
-                            <p class="text-muted mb-0">2024</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-certificate fa-2x mb-3"></i>
-                            <h5 class="card-title">Webinar: Exploring English Skills</h5>
-                            <p class="card-text mb-1">Language &amp; Communication</p>
-                            <p class="text-muted mb-0">2022</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ACHIEVEMENTS -->
-    <section id="achievements" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Key Achievements</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <div class="card shadow">
-                        <div class="card-body p-4">
-                            <ul class="ps-3 mb-0">
-                                <li>Graduated in <span class="fw-bold">3.5 years</span> with a GPA of <span class="fw-bold">3.71/4.00</span>.</li>
-                                <li>Published research paper in NERO Journal: <em>“Implementation of SVM with Query Expansion Ranking on Madurese Herbal Reviews.”</em></li>
-                                <li>Delivered integrated systems connecting <span class="fw-bold">SAP</span>, <span class="fw-bold">MaintainX</span>, and <span class="fw-bold">Talenta</span> to improve workflow automation.</li>
-                                <li>Developed multiple operational systems that enhanced efficiency for educational, healthcare, and manufacturing sectors.</li>
-                                <li>Recognized for <span class="fw-bold">clean code</span>, <span class="fw-bold">secure API integration</span>, and <span class="fw-bold">on-time project delivery</span> across all projects.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="mb-4">Get In Touch</h2>
-            <p class="mb-4">
-                Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya.
+<!-- PROJECTS -->
+<section id="projects" class="section-soft">
+    <div class="container">
+        <div class="section-header text-center">
+            <p class="section-eyebrow mb-1">Selected Work</p>
+            <h2 class="section-title mb-1">Highlighted Projects</h2>
+            <p class="section-desc mx-auto" style="max-width: 640px;">
+                A few projects that showcase my experience building integrated, production-ready systems.
             </p>
-            <p class="mb-4">
-                <span class="d-block"><i class="fas fa-map-marker-alt me-2"></i>Bangkalan, East Java</span>
-                <span class="d-block"><i class="fas fa-phone me-2"></i>0821-3861-4807</span>
-                <span class="d-block"><i class="fas fa-envelope me-2"></i>hambali.fitrianto01@gmail.com</span>
-            </p>
-            <div class="social-links mb-3">
-                <a href="https://porto.hambalifitrianto.web.id" class="social-icon" target="_blank" title="Portfolio Website">
-                    <i class="fas fa-globe"></i>
-                </a>
-                <a href="https://github.com/Hambali-Fitrianto" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/hambali-fitrianto" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/capt_msf/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/hambali.fitrianto" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="mailto:hambali.fitrianto01@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="row g-4">
+            <!-- SAP Monitoring Center -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-industry me-1"></i> Manufacturing</span>
+                        <span class="small text-muted">2025</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">SAP Monitoring Center</h5>
+                    <p class="project-tagline">
+                        Real-time dashboard using Python RFC & Laravel to track production work centers and expose SAP data visually.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Python RFC</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">SAP Integration</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MainTENZ -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-screwdriver-wrench me-1"></i> Maintenance</span>
+                        <span class="small text-muted">2025</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">MainTENZ – Maintenance System</h5>
+                    <p class="project-tagline">
+                        Laravel-based platform integrated with MaintainX API to manage work orders, preventive schedules, 
+                        and automated KPI reports.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">MaintainX API</span>
+                        <span class="skill-tag">Cronjob</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recruitment System -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-user-group me-1"></i> HR</span>
+                        <span class="small text-muted">2024</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">Recruitment Management System</h5>
+                    <p class="project-tagline">
+                        HR recruitment platform integrated with Talenta API using HMAC for secure employee and candidate data sync.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Talenta API</span>
+                        <span class="skill-tag">HMAC Auth</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pharmacy Management -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-prescription-bottle-medical me-1"></i> Healthcare</span>
+                        <span class="small text-muted">2024</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">Pharmacy Management System</h5>
+                    <p class="project-tagline">
+                        Web app to manage pharmacy inventory, sales, and drug distribution with role-based access and reporting.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sentiment Analysis -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-brain me-1"></i> Machine Learning</span>
+                        <span class="small text-muted">2024</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">Sentiment Analysis · Madurese Herbal Reviews</h5>
+                    <p class="project-tagline">
+                        NLP project using Python and SVM with Query Expansion Ranking to classify customer sentiment.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SVM</span>
+                        <span class="skill-tag">NLP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Petshop Management -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="chip"><i class="fa-solid fa-paw me-1"></i> Retail</span>
+                        <span class="small text-muted">2024</span>
+                    </div>
+                    <h5 class="mt-1 mb-1">Petshop Management System</h5>
+                    <p class="project-tagline">
+                        System to manage product inventory, customer transactions, and pet service records for petshop operations.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <p class="mb-0">&copy; 2025 Hambali Fitrianto. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/navbar.js"></script>
-    <script src="assets/js/script.js"></script>
+<!-- SKILLS -->
+<section id="skills" class="section-light">
+    <div class="container">
+        <div class="section-header text-center">
+            <p class="section-eyebrow mb-1">Tech Stack</p>
+            <h2 class="section-title mb-1">Skills & Tools</h2>
+            <p class="section-desc mx-auto" style="max-width: 640px;">
+                The technologies I use to design, build, and maintain integrated web applications.
+            </p>
+        </div>
+
+        <div class="row g-3 mb-4">
+            <div class="col-sm-6 col-lg-3">
+                <div class="skill-group">
+                    <h6>Languages</h6>
+                    <div class="mt-2">
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="skill-group">
+                    <h6>Frameworks</h6>
+                    <div class="mt-2">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Inertia</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">jQuery</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="skill-group">
+                    <h6>Integration & APIs</h6>
+                    <div class="mt-2">
+                        <span class="skill-tag">SAP RFC & OData</span>
+                        <span class="skill-tag">Mekari Talenta (HMAC)</span>
+                        <span class="skill-tag">MaintainX API</span>
+                        <span class="skill-tag">Wablas WhatsApp API</span>
+                        <span class="skill-tag">RESTful API</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="skill-group">
+                    <h6>Database & DevOps</h6>
+                    <div class="mt-2">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Debian</span>
+                        <span class="skill-tag">SUSE Linux</span>
+                        <span class="skill-tag">Nginx</span>
+                        <span class="skill-tag">Cronjob</span>
+                        <span class="skill-tag">Laravel Scheduler</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="skill-group">
+                    <h6>Tools & Collaboration</h6>
+                    <div class="mt-2">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Microsoft Office</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="skill-group">
+                    <h6>UI/UX & Analytics</h6>
+                    <div class="mt-2">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Wireframing</span>
+                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">Responsive Layout</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Data Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-soft">
+    <div class="container">
+        <div class="section-header text-center">
+            <p class="section-eyebrow mb-1">Contact</p>
+            <h2 class="section-title mb-1">Let’s Build Something</h2>
+            <p class="section-desc mx-auto" style="max-width: 520px;">
+                Tertarik untuk berkolaborasi, konsultasi sistem integrasi, atau sekadar berdiskusi? 
+                Silakan hubungi saya melalui salah satu kanal berikut.
+            </p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="contact-card text-center">
+                    <p class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>Bangkalan, East Java</p>
+                    <p class="mb-2"><i class="fa-solid fa-phone me-2"></i>0821-3861-4807</p>
+                    <p class="mb-3"><i class="fa-solid fa-envelope me-2"></i>hambali.fitrianto01@gmail.com</p>
+                    <div class="mb-3">
+                        <a href="mailto:hambali.fitrianto01@gmail.com" class="btn btn-primary px-4">
+                            <i class="fa-solid fa-paper-plane me-2"></i>Send Email
+                        </a>
+                    </div>
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <a href="https://porto.hambalifitrianto.web.id" class="social-icon" target="_blank" title="Portfolio Website">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        <a href="https://github.com/Hambali-Fitrianto" class="social-icon" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/hambali-fitrianto" class="social-icon" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/capt_msf/" class="social-icon" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/hambali.fitrianto" class="social-icon" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <p class="small text-muted mt-2 mb-0">
+                        Preferensi proyek: Web App · System Integration · Internal Dashboard · API-driven Platform
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-3 text-center text-muted">
+    <div class="container">
+        <small>&copy; 2025 Hambali Fitrianto. All rights reserved.</small>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
